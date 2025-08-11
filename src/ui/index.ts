@@ -1,3 +1,4 @@
+import './styles.css';
 import type { UIScanGroup } from '../main/scan';
 import { state } from './state';
 import { renderGroups, fillMatchesUI } from './renderGroups';
