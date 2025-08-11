@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Text Style Scanner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/src/ui/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="title">Поиск одинаковых текстовых стилей (сегменты)</div>
+
+      <div class="controls">
+        <select id="scope">
+          <option value="selection">Только выделение</option>
+          <option value="page">Текущая страница</option>
+          <option value="document">Весь файл</option>
+        </select>
+        <button id="scan">Сканировать</button>
+        <button id="apply" disabled>Применить стиль</button>
+      </div>
+
+      <div id="heavy" class="banner">
+        <div><strong>Очень большой объём данных.</strong></div>
+        <div class="row" id="heavyStats"></div>
+        <div class="row">Стиль создаётся только в Styles. Переменные не используются.</div>
+      </div>
+
+      <div class="field">
+        <label class="title" for="styleName">Имя нового стиля</label>
+        <input id="styleName" type="text" placeholder="Например: Body/Regular/16" autocomplete="off" />
+        <div class="hint">Можно применить один из уже созданных стилей с теми же параметрами или создать новый.</div>
+
+        <div id="matchBox" class="match">
+          <div class="match-row">
+            <label><input type="checkbox" id="useExisting" /> Использовать существующий стиль</label>
+            <select id="existingList"></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="list" id="groups">
+        <div class="empty">Нажми «Сканировать», чтобы увидеть элементы.</div>
+      </div>
+      <button id="showMore" class="more">Показать ещё</button>
+
+      <div class="status" id="status"></div>
+    </div>
+
+    <div id="tooltip"></div>
+
+    <script type="module" src="/src/ui/index.ts"></script>
+  </body>
+</html>

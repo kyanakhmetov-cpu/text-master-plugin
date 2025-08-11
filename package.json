@@ -1,0 +1,17 @@
+{
+  "name": "figma-typo-styles-grouper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm run clean && vite build --config vite.main.config.ts && vite build --config vite.ui.config.ts",
+    "clean": "rimraf dist",
+    "dev": "vite --config vite.ui.config.ts"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.85.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0"
+  }
+}
